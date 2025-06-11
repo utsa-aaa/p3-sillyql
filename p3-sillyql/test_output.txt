@@ -1,0 +1,9 @@
+% % New table 281class with column(s) emotion person Y/N created
+% Added 8 rows to 281class from position 0 to 7
+% Deleted 2 rows from 281class
+% Generated hash index for table 281class on column emotion, with 4 distinct keys
+% person emotion 
+Printed 0 matching rows from 281class
+% New table pets with column(s) Name likes_cats? likes_dogs? created
+% Added 2 rows to pets from position 0 to 1
+% Error during JOIN: invalid table number (must be 1 or 2)

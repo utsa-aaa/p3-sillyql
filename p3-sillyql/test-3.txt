@@ -1,0 +1,30 @@
+CREATE jewellery 1 int carat
+INSERT INTO jewellery 3 ROWS
+10
+25
+15
+CREATE jewellery 1 string stone_name
+INSERT INTO gems 3 ROWS
+20
+30
+40
+NOT A known command
+#comment yayay
+GENERATE FOR gems bst INDEX on carat
+GENERATE FOR jewellery hash INDEX on stone_name
+DELETE FROM gems WHERE carat = 15
+DELETE FROM jewellery WHERE stone_name = ruby
+PRINT FROM gems 1 stone_name WHERE stone_name = ruby
+PRINT FROM jewellery 1 stone_name WHERE carat > 20
+PRINT FROM jewellery 1 carat WHERE stone_name = sapphire
+JOIN jewellery AND gems WHERE carat = carat AND PRINT 1 carat 1
+JOIN jewellery AND jewellery WHERE stone_name = stone_name AND PRINT 1 carat 1
+JOIN jewellery AND jewellery WHERE carat = carat AND PRINT 1 stone_name 1
+JOIN jewellery AND jewellery WHERE carat = carat AND PRINT 1 carat 1
+CREATE gems 1 int weight
+JOIN jewellery AND gems WHERE carat = weight AND PRINT 1 carat 2
+JOIN gems AND jewellery WHERE weight = carat AND PRINT 1 weight 2
+JOIN jewellery AND gems WHERE carat = weight AND PRINT 2 carat 1 weight 2
+REMOVE gems
+REMOVE diamonds
+QUIT

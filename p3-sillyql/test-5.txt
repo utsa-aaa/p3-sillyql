@@ -1,0 +1,28 @@
+CREATE dataset1 1 string years
+INSERT INTO dataset1 2 ROWS
+7
+2
+DELETE FROM dataset1 WHERE years > 4
+PRINT FROM dataset1 1 years ALL
+DELETE FROM dataset1 WHERE years = 2
+PRINT FROM dataset1 1 years ALL
+CREATE dataset2 4 string string string string hilarious years mass title
+INSERT INTO dataset2 4 ROWS
+false 18 10.2 sam
+true 30 180 chris
+false 60 550 jenny
+true 5 25 max
+INSERT INTO dataset2 1 ROWS
+true 90 75 ella
+PRINT FROM dataset2 4 title mass years hilarious ALL
+DELETE FROM dataset2 WHERE years > false
+PRINT FROM dataset2 4 title mass years hilarious ALL
+DELETE FROM dataset2 WHERE title < 60
+PRINT FROM dataset2 4 title mass years hilarious ALL
+DELETE FROM dataset2 WHERE hilarious > true
+PRINT FROM dataset2 4 title mass years hilarious ALL
+DELETE FROM dataset2 WHERE years = 30
+PRINT FROM dataset2 4 title mass years hilarious ALL
+REMOVE dataset2
+REMOVE dataset1
+QUIT

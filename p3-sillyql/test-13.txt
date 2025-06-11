@@ -1,0 +1,18 @@
+CREATE users 3 string int bool username age isActive
+CREATE orders 2 string int username order_id
+INSERT INTO users 5 ROWS
+John 25 true
+Alice 30 false
+Bob 22 true
+Charlie 35 false
+Eve 28 true
+INSERT INTO orders 5 ROWS
+John 1
+Alice 2
+Bob 3
+Charlie 4
+Eve 5
+DELETE FROM users WHERE age < 30
+DELETE FROM orders WHERE order_id = 4
+JOIN users AND orders WHERE username = username AND PRINT 2 username 1 order_id 2
+QUIT

@@ -1,0 +1,43 @@
+#mexican food yum yum
+CREATE menu 4 string int bool double item_name calories is_spicy price
+CREATE orders 3 int string double order_id customer_name total_cost
+INSERT INTO menu 4 ROWS
+tacos 200 true 3.99
+burrito 500 false 7.49
+quesadilla 400 false 5.99
+nachos 350 true 4.99
+GENERATE FOR menu hash INDEX ON calories
+PRINT FROM menu 3 item_name calories price WHERE calories=400
+PRINT FROM menu 3 item_name is_spicy price WHERE is_spicy=false
+PRINT FROM menu 3 item_name calories price WHERE calories<300
+PRINT FROM menu 3 item_name calories price WHERE calories>450
+INSERT INTO orders 3 ROWS
+1 Alice 15.99
+2 Bob 9.50
+3 Charlie 22.75
+PRINT FROM orders 3 order_id customer_name total_cost WHERE total_cost<20
+PRINT FROM orders 3 order_id customer_name total_cost WHERE total_cost>10
+GENERATE FOR orders bst INDEX ON order_id
+JOIN menu orders WHERE calories=order_id
+PRINT FROM menu 3 item_name calories price ALL
+PRINT FROM orders 3 order_id customer_name total_cost ALL
+DELETE FROM menu WHERE calories<300
+PRINT FROM menu 3 item_name calories price ALL
+DELETE FROM orders WHERE total_cost>20
+PRINT FROM orders 3 order_id customer_name total_cost ALL
+INSERT INTO menu 2 ROWS
+chimichanga 700 false 8.99
+tostada 250 true 5.25
+GENERATE FOR menu bst INDEX ON price
+GENERATE FOR orders hash INDEX ON customer_name
+PRINT FROM menu 3 item_name calories price WHERE price=5.25
+PRINT FROM menu 3 item_name is_spicy price WHERE price>6.00
+PRINT FROM orders 3 order_id customer_name total_cost WHERE customer_name=Bob
+PRINT FROM orders 3 order_id customer_name total_cost WHERE customer_name>Alice
+DELETE FROM menu WHERE price>6.00
+PRINT FROM menu 3 item_name calories price ALL
+DELETE FROM orders WHERE order_id=2
+PRINT FROM orders 3 order_id customer_name total_cost ALL
+REMOVE menu
+REMOVE orders
+QUIT

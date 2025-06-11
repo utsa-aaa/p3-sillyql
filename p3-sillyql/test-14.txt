@@ -1,0 +1,16 @@
+CREATE students 3 string int bool name age isActive
+CREATE courses 3 string int bool course_name course_code isActive
+INSERT INTO students 5 ROWS
+John 25 true
+Alice 30 false
+Bob 22 true
+Charlie 35 false
+Eve 28 true
+INSERT INTO courses 5 ROWS
+Math 101 true
+History 102 true
+Science 103 true
+Literature 104 true
+Physics 105 true
+JOIN students AND courses WHERE name = course_name AND PRINT 3 name 1 age 2 course_code 2
+QUIT

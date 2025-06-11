@@ -1,0 +1,3 @@
+PRINT FROM 281class 2 person emotion WHERE Y/N = true
+
+JOIN pets AND 281class WHERE Name = person AND PRINT 3 Name 1 emotion 2 likes_dogs? 1

@@ -1,0 +1,25 @@
+#Bakery database test case covering various operations and edge cases
+CREATE bakery 4 string int bool double item_name quantity is_fresh price
+INSERT INTO bakery 4 ROWS
+croissant 50 true 3.99
+bagel 80 false 2.49
+eclair 30 true 4.29
+muffin 100 true 2.99
+INSERT INTO coffee_shop 4 ROWS
+latte 20 true 5.49
+PRINT FROM bakery 3 item_name quantity price WHERE quantity>40
+PRINT FROM bakery 3 item_name is_fresh price WHERE is_fresh=false
+PRINT FROM bakery 3 item_name quantity price WHERE flavor=chocolate
+CREATE orders 4 int string bool double order_id customer_name is_completed total_amount
+INSERT INTO orders 4 ROWS
+50 Alice true 15.99
+30 Bob false 10.50
+100 Charlie true 22.75
+JOIN bakery orders WHERE quantity=order_id
+DELETE FROM bakery WHERE item_name=croissant
+DELETE FROM orders WHERE is_completed=false
+PRINT FROM bakery 3 item_name quantity price ALL
+PRINT FROM orders 3 order_id customer_name total_amount ALL
+REMOVE bakery
+REMOVE orders
+QUIT

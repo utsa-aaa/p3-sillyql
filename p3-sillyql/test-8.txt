@@ -1,0 +1,28 @@
+#Crafting workshop database test file
+CREATE workshop 4 string int bool double project_name hours_complete is_fun project_cost
+INSERT INTO workshop 2 ROWS
+knitted_scarf 21 true 25.5
+painted_vase 30 false 62.3
+PRINT FROM workshop 3 is_fun project_name hours_complete WHERE project_cost>40
+INSERT INTO workshop 3 ROWS
+wooden_table 500 false 20.2
+ceramic_pot 200 true 20.0
+woven_basket 100 true 1005.5
+GENERATE FOR workshop bst INDEX ON hours_complete
+PRINT FROM workshop 3 is_fun project_name hours_complete ALL
+GENERATE FOR workshop HASH INDEX ON hours_complete
+PRINT FROM workshop 4 is_fun project_name hours_complete project_cost ALL
+GENERATE FOR workshop HASH INDEX ON is_fun
+PRINT FROM workshop 4 is_fun project_name hours_complete project_cost WHERE project_cost<30.0
+INSERT INTO workshop 1 ROWS
+woven_basket 100 true 350.95
+PRINT FROM workshop 3 is_fun project_name hours_complete WHERE is_fun=true
+DELETE FROM workshop WHERE project_name=metal_sculpture
+PRINT FROM workshop 3 is_fun project_name hours_complete WHERE is_fun=true
+INSERT INTO workshop 2 ROWS
+embroidery_hoop 50 true 100.0
+origami_crane 30 true 505.0
+PRINT FROM workshop 3 is_fun project_name hours_complete WHERE project_name=embroidery_hoop
+PRINT FROM workshop 3 is_fun project_name hours_complete WHERE hours_complete>20
+REMOVE workshop
+QUIT

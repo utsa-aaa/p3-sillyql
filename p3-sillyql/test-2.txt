@@ -1,0 +1,56 @@
+# Create two tables
+CREATE books 4 string int bool string title pages bestseller genre
+CREATE movies 4 string int bool string name duration hit category
+# Insert initial data into books
+INSERT INTO books 3 ROWS
+"Harry Potter" 500 true fantasy
+"1984" 328 true dystopian
+"Educated" 400 false biography
+# Insert initial data into movies
+INSERT INTO movies 3 ROWS
+"Inception" 148 true sci-fi
+"Titanic" 195 true drama
+"Parasite" 132 false thriller
+# Generate an index on books using BST
+GENERATE FOR books BST INDEX ON pages
+# PRINT WHERE on books with every operator
+PRINT FROM books 2 title pages WHERE pages = 500
+PRINT FROM books 2 title pages WHERE pages < 400
+PRINT FROM books 2 title pages WHERE pages > 400
+# PRINT WHERE on movies before indexing
+PRINT FROM movies 2 name duration WHERE duration = 195
+PRINT FROM movies 2 name duration WHERE duration < 150
+PRINT FROM movies 2 name duration WHERE duration > 150
+# Generate an index on movies using Hash
+GENERATE FOR movies HASH INDEX ON duration
+# PRINT WHERE on movies after indexing
+PRINT FROM movies 2 name duration WHERE duration = 195
+PRINT FROM movies 2 name duration WHERE duration < 150
+PRINT FROM movies 2 name duration WHERE duration > 150
+# Insert more rows into books
+INSERT INTO books 2 ROWS
+"The Hobbit" 310 true fantasy
+"Becoming" 426 false biography
+# PRINT WHERE BEFORE calling generate again
+PRINT FROM books 2 title pages WHERE pages < 400
+PRINT FROM books 2 title pages WHERE pages > 400
+# Insert more rows into movies
+INSERT INTO movies 2 ROWS
+"Interstellar" 169 true sci-fi
+"La La Land" 128 false musical
+# PRINT WHERE BEFORE calling generate again
+PRINT FROM movies 2 name duration WHERE duration = 128
+PRINT FROM movies 2 name duration WHERE duration > 150
+# Generate new index on a different column
+GENERATE FOR books HASH INDEX ON bestseller
+GENERATE FOR movies BST INDEX ON hit
+# PRINT WHERE AFTER generating new index
+PRINT FROM books 2 title bestseller WHERE bestseller = true
+PRINT FROM movies 2 name hit WHERE hit = false
+# Final PRINT ALL
+PRINT FROM books 4 title pages bestseller genre ALL
+PRINT FROM movies 4 name duration hit category ALL
+# Cleanup
+REMOVE books
+REMOVE movies
+QUIT

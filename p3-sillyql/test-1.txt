@@ -1,0 +1,19 @@
+#comment blah blah
+CREATE library 3 string int bool genre pages popular
+INSERT INTO library 3 ROWS
+fantasy 350 true
+mystery 420 true
+biography 200 false
+PRINT FROM library 3 popular pages genre ALL
+DELETE FROM library WHERE genre = romance
+PRINT FROM library 2 popular genre ALL
+INSERT INTO library 2 ROWS
+sci-fi 500 true
+romance 320 false
+PRINT FROM library 3 pages popular genre ALL
+DELETE FROM library WHERE pages = 320
+PRINT FROM library 3 genre pages popular ALL
+DELETE FROM library WHERE popular = true
+PRINT FROM library 3 genre pages popular ALL
+REMOVE library
+QUIT

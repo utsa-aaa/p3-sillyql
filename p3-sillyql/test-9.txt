@@ -1,0 +1,50 @@
+#Comment:Test case with two tables,generating indexes and performing print/where operations.
+CREATE library 3 string int bool genre pages popular
+CREATE bookstore 3 string int bool genre price bestseller
+#Insert rows into library table
+INSERT INTO library 3 ROWS
+fantasy 350 true
+mystery 420 true
+biography 200 false
+#Insert rows into bookstore table
+INSERT INTO bookstore 3 ROWS
+fiction 15.99 true
+non-fiction 19.99 false
+mystery 12.99 true
+#Generate a hash index on 'genre' in 'library'
+GENERATE FOR library hash INDEX ON genre
+#PRINT WHERE on 'library' with hash index
+PRINT FROM library 3 genre pages popular ALL
+PRINT FROM library 3 genre pages popular WHERE genre=fantasy
+PRINT FROM library 3 genre pages popular WHERE pages>250
+PRINT FROM library 3 genre pages popular WHERE popular=true
+#Generate a BST index on 'price' in 'bookstore'
+GENERATE FOR bookstore BST INDEX ON price
+#PRINT WHERE on 'bookstore' with BST index
+PRINT FROM bookstore 3 genre price bestseller ALL
+PRINT FROM bookstore 3 genre price bestseller WHERE price<20
+PRINT FROM bookstore 3 genre price bestseller WHERE bestseller=true
+#Insert more rows into both tables
+INSERT INTO library 2 ROWS
+sci-fi 500 true
+romance 320 false
+INSERT INTO bookstore 2 ROWS
+sci-fi 22.99 false
+romance 17.49 true
+#PRINT WHERE on 'library' before reindexing
+PRINT FROM library 3 genre pages popular WHERE genre=sci-fi
+PRINT FROM library 3 genre pages popular WHERE pages<=400
+PRINT FROM library 3 genre pages popular WHERE popular=false
+#PRINT WHERE on 'bookstore' before reindexing
+PRINT FROM bookstore 3 genre price bestseller WHERE bestseller=false
+PRINT FROM bookstore 3 genre price bestseller WHERE price>=15
+#Reindex tables
+GENERATE FOR library BST INDEX ON pages
+GENERATE FOR bookstore hash INDEX ON genre
+#Final PRINT WHERE after reindexing
+PRINT FROM library 3 genre pages popular ALL
+PRINT FROM bookstore 3 genre price bestseller ALL
+#Remove tables
+REMOVE library
+REMOVE bookstore
+QUIT

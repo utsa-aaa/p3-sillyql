@@ -1,0 +1,28 @@
+CREATE flora 10 string double bool string string bool string string bool double int double int string bool int int bool bool bool string double string double double double int bool double int double double double string double double bool int double string double double string bool string bool double bool double string bool double bool bool double int double double bool double double string bool int int bool int bool bool int double int double seedling meadow valley grove sunlight forest terrain undergrowth pollinate creek hillside foliage bloom fauna lush ecosystem vine moss wildlife evergreen sapling woodland branch fern thrive root petal boulder 
+PRINT FROM flora 4 forest bloom terrain sapling ALL
+GENERATE FOR flora bst INDEX ON hillside
+INSERT INTO flora 5 ROWS
+shrub 73.2491 true petal steep false 14.5839 34 123.946 19 dense false 180 37 true true false soil 109.147 ecosystem 93.2365 57.8092 76.9237 122 false 199.359 57 103.236 36.2938 177.894 meadow 102.293 148.745 true 95 183.672 fern 164.229 190.276 boulder false steep true 120.0387 false 91.4024 meadow false 76.3281 false true 15.9921 77 61.2379 87.8951 true 105.824 55.9642 seedling true 174 39 true 89 false false 92 182.789 74 168.287 
+brook 139.183 false river bank true 188.526 55 14.2897 42 branch true 159 60 false false true hill 141.219 fern 105.997 6.78342 197.827 126 false 23.5643 142 75.3982 73.9217 41.6735 thrive 181.387 99.8263 false 48 162.934 undergrowth 154.821 158.733 lush true hill false 143.615 false 66.8329 shrub false 123.237 true false 185.703 67 139.614 92.5467 true 175.842 134.292 moss false 161 92 false 30 true true 81 149.674 109 91.234 
+clearing 51.9478 false habitat hidden true 176.982 73 118.629 93 fauna false 121 192 false false true wildflower 139.219 pollinate 167.326 166.731 144.482 43 true 17.3921 174 106.339 198.124 182.761 vine 129.472 196.817 false 183 119.982 gentle 96.246 74.5891 creek false burst true 135.451 true 189.248 forest true 98.6751 true true 137.239 91 108.621 173.472 false 197.351 100.472 pebble false 178 81 true 60 true false 105 31.4937 69 37.9812 
+grove 48.2391 true sprout root false 27.0196 43 99.3172 158 oak false 35 26 true false false fern 129.721 flourish 152.229 170.673 125.764 152 true 199.134 37 97.8312 179.429 136.319 evergreen 197.583 147.483 true 78 73.9137 moss 93.471 84.5729 rolling false bark true 183.921 false 21.8426 canyon true 138.726 false true 164.512 48 89.7613 123.784 true 112.746 149.867 wildlife false 146 113 false 121 false false 73 157.523 133 125.318 
+thicket 68.8293 true oak breeze false 37.192 88 60.4827 144 vine true 102 44 true true true boulder 76.4375 seed 109.647 9.34892 152.892 165 true 172.943 160 32.541 147.291 197.563 terrain 144.235 133.628 false 56 184.198 hill 186.473 173.294 fern true hollow true 132.421 false 38.2946 sapling false 149.921 false true 85.7824 130 191.927 151.892 false 159.234 59.4927 meadow false 172 79 true 176 true false 55 109.234 88 134.317 
+PRINT FROM flora 15 thrive petal evergreen bloom grove seedling lush terrain creek meadow ecosystem hillside boulder WHERE hillside > true
+PRINT FROM flora 21 petal terrain habitat lush undergrowth creek petal boulder bloom terrain grove foliage WHERE hillside < true
+PRINT FROM flora 7 fauna bloom undergrowth grove seedling sapling petal WHERE hillside > true
+GENERATE FOR flora bst INDEX ON bloom
+PRINT FROM flora 1 meadow WHERE bloom = 84.9372
+CREATE habitat 24 int double bool int string int string int bool string int int string int bool int string bool int int int bool int bool nest perch bloom reed rock burrow tide rustling evergreen shade stone horizon ridge ripple brook 
+INSERT INTO habitat 3 ROWS
+111 57.3829 false 174 hollow 39 root 67 false tide 140 23 dusk 183 true 31 perch false 101 176 47 false 183 false 
+84 34.9134 true 195 oak 123 nest 113 false clearing 97 48 moss 143 false 184 cliff true 194 75 136 true 174 false 
+129 48.7265 false 169 canyon 101 shrub 122 true whisper 35 85 rustling 161 false 63 rock false 47 31 99 false 181 true 
+PRINT FROM habitat 9 ripple ridge dusk nest shade horizon bloom brook burrow WHERE ridge < false
+JOIN flora AND flora WHERE vine = bloom AND PRINT 7 terrain 1 fauna 1 hillside 1 branch 1 meadow 1 root 1 grove 1 
+PRINT FROM flora 18 bloom creek forest habitat oak hill thrive foliage terrain lush evergreen hillside sapling terrain WHERE root > 20
+DELETE FROM habitat WHERE nest > 105
+JOIN flora AND flora WHERE undergrowth = root AND PRINT 9 boulder 1 meadow 1 petal 1 canyon 1 ridge 1 clearing 1 boulder 1 grove 1 
+JOIN flora AND habitat WHERE ecosystem = nest AND PRINT 25 hillside 1 terrain 1 creek 1 lush 1 fauna 1 thicket 1 whisper 1 clearing 1 fauna 1 brook 1 seedling 1 grove 1 boulder 1 meadow 1 terrain 1 wildflower 1 canyon 1 ridge 1 thicket 1 breeze 1 rolling 1 shrub 1 branch 1 valley 1 
+JOIN habitat AND habitat WHERE horizon = nest AND PRINT 8 ripple 1 dusk 1 moss 1 tide 1 brook 1 horizon 1 dusk 1 stone 1 
+PRINT FROM habitat 9 ridge canyon burrow reed canyon ridge bloom whisper moss ALL
+QUIT

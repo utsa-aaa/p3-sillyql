@@ -1,0 +1,27 @@
+# comment woo woo
+CREATE forest 2 string string tree_name tree_type
+INSERT INTO forest 3 ROWS
+oak deciduous
+pine coniferous
+maple deciduous
+PRINT FROM forest 1 tree_name WHERE tree_type = deciduous
+CREATE reserve 3 string int string animal_name weight species
+INSERT INTO reserve 3 ROWS
+bear 400 grizzly
+fox 50 red
+eagle 15 bald
+JOIN forest AND reserve WHERE tree_type = species AND PRINT 2 tree_name 1 tree_name 2
+JOIN forest AND reserve WHERE tree_name = species AND PRINT 2 tree_name 1 species 2
+# Random comment about nature
+DELETE FROM reserve WHERE weight > 100
+JOIN forest AND reserve WHERE tree_type = species AND PRINT 2 tree_name 1 tree_name 2
+JOIN forest AND reserve WHERE tree_name = species AND PRINT 2 tree_name 1 species 2
+GENERATE FOR forest hash INDEX ON tree_type
+PRINT FROM forest 2 tree_name tree_type ALL
+PRINT FROM forest 1 tree_type WHERE tree_name = maple
+GENERATE FOR forest bst INDEX ON tree_name
+PRINT FROM forest 1 tree_name WHERE tree_type = coniferous
+PRINT FROM forest 1 tree_type ALL
+REMOVE forest
+REMOVE reserve
+QUIT

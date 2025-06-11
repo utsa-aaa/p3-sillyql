@@ -1,0 +1,27 @@
+CREATE storybook 3 string string bool character years magical
+INSERT INTO storybook 2 ROWS
+merlin 150 true
+arthur 42 false
+PRINT FROM storybook 3 magical character years WHERE years > 200
+INSERT INTO storybook 3 ROWS
+morgana 500 true
+lancelot 120 false
+guinevere 85 true
+GENERATE FOR storybook bst INDEX ON years
+PRINT FROM storybook 3 magical character years ALL
+GENERATE FOR storybook hash INDEX ON years
+PRINT FROM storybook 3 magical character years ALL
+GENERATE FOR storybook hash INDEX ON magical
+PRINT FROM storybook 3 magical character years WHERE magical = true
+INSERT INTO storybook 1 ROWS
+guinevere 85 true
+PRINT FROM storybook 3 magical character years WHERE magical = true
+DELETE FROM storybook WHERE character = guinevere
+PRINT FROM storybook 3 magical character years WHERE magical = true
+INSERT INTO storybook 2 ROWS
+galahad 55 false
+galahad 30 false
+PRINT FROM storybook 3 magical character years WHERE character = galahad
+PRINT FROM storybook 3 magical character years WHERE character = morgause
+REMOVE storybook
+QUIT

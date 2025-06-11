@@ -1,0 +1,9 @@
+CREATE invalid_table 3 string int bool name age isActive
+INSERT INTO invalid_table 5 ROWS
+John true 25
+Alice false 30
+Bob true 22
+Charlie false 35
+Eve true 28
+PRINT FROM invalid_table 2 name age WHERE isActive = true
+QUIT
